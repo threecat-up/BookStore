@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="bookstore1">
+    <output-path>$PROJECT_DIR$/out/artifacts/bookstore1</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="bookstore1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="book_lib" />
+          <element id="library" level="project" name="commons-dbutils-1.3" />
+          <element id="library" level="project" name="kaptcha-2.3.2" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="bookstore1/web/Web" />
+    </root>
+  </artifact>
+</component>
