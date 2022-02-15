@@ -1,6 +1,6 @@
 # 网上书店系统
-## 项目简述
-&emsp;在B站尚硅谷Javaweb视频中学习了网上书店系统，但是所给的项目并没有完全实现，自己实现了整个完整的项目，并且添加了不少的功能（项目语言为Java，框架为**MVC**，服务器Tomcat，数据库MySQL）。
+## 项目简述:
+&emsp;在B站尚硅谷Javaweb视频中学习了网上书店系统，但是所给的项目并没有完全实现，自己实现了整个完整的项目，并且添加了不少的功能（项目语言为Java，框架为**MVC**，服务器Tomcat，数据库MySQL）。<br>
 &emsp;快速搭建：clone之后，在IDEA中打开，配置Tomcat服务器（Tomcat7/8/9及最新的均可），找到sql文件夹并在MySQL（MySQL的版本最好是5.x避免出现问题）中导入文件bookstore.sql，此时会创建名为book的数据库数据，找到jdbc.properties文件，将其中的username和password更改为自己的数据库的用户名和密码。之后在MySQL数据库管理系统可以查看关于账户密码问题（管理员账号和密码均为yangjie，其它为普通用户），之后运行即可。
 
 ## 项目的设计报告如下（文件夹report中提供了word版的详细设计报告可以参考）
@@ -19,7 +19,9 @@
 **DBMS**：MySQL（图形化界面MySQLworkbench/SQLyog/navicat）
 
 **建模工具**：Sybase PowerDesigner
+
 **注意Tomcat的配置**
+
 ![image](https://user-images.githubusercontent.com/60840921/153998463-e400b161-75a0-4b30-9abc-a496251b7144.png)
 ![SIUSS(SFDAF6$D(V N7ZY1S](https://user-images.githubusercontent.com/60840921/154036794-41637771-afc1-42fa-90d2-e4962123590d.png)
 
@@ -32,25 +34,31 @@
 ![image](https://user-images.githubusercontent.com/60840921/154052790-c51f95ec-0629-4dea-ba42-1e4a147aa24d.png)
 
 **2、登录页面** 
+
 ![image](https://user-images.githubusercontent.com/60840921/154052849-c4205af2-436d-4f86-a242-b64acf3e5997.png)
 
 
 **3、注册页面** 
+
 ![image](https://user-images.githubusercontent.com/60840921/154052894-eb085e08-94a3-42b9-b707-8aa64c622ba7.png)
 
 
 **4、用户购物车页面**
+
 ![image](https://user-images.githubusercontent.com/60840921/154052926-447254de-4a1d-4052-8ad4-cc35e2b59a8f.png)
 
 **5、 我的订单页面**
+
 ![image](https://user-images.githubusercontent.com/60840921/154052947-eb82ca76-4fb0-4d26-97b8-fcf75b0d8a1e.png)
 
 
 **6、图书管理页面**
+
 ![image](https://user-images.githubusercontent.com/60840921/154052991-29ceb319-1dd5-4f8d-ad53-dbc4c824449a.png)
 
 
 **7、订单管理页面**
+
 ![image](https://user-images.githubusercontent.com/60840921/154053011-4a6d6e69-8a9a-4393-a837-6f07b5885e8c.png)
 
 
@@ -61,7 +69,6 @@
 **9、总账单页面**
 
 ![image](https://user-images.githubusercontent.com/60840921/154053247-e4ce4084-6cf6-4b2d-a589-15dd76e89eee.png)
-
 
 
 **10、个人信息页面**
@@ -75,6 +82,7 @@
 ### （三）数据库存储设计
 
  根据前端页面以及之前大实验的分析，我们决定创建book数据库，建库语句如下：
+ 
 ![image](https://user-images.githubusercontent.com/60840921/154053614-e54b2fa4-ed49-4c22-9370-f55cfeb8ba42.png)
 
 并决定创建4张表如下： 
@@ -84,6 +92,7 @@
 <center>图为navicat for mysql提供</center>
 
 建表语句如下：
+
 ![image](https://user-images.githubusercontent.com/60840921/154053765-6a87677c-352f-46a0-b85b-c1c05a315c83.png)
 ![image](https://user-images.githubusercontent.com/60840921/154053780-b7368f19-db58-48ee-8dbc-b8f4ca42f51c.png)
 ![image](https://user-images.githubusercontent.com/60840921/154053802-f122893d-4e5b-4a22-981f-39e194769de9.png)
@@ -104,6 +113,7 @@
 **用户模块：**
 
 根据数据库表的设计创建我们的javaBean，创建User类，数据与数据库t_user表相对应。之后要设计我们的数据库层面的连接，这里导入数据库连接的jar包，已经测试包：
+
 ![image](https://user-images.githubusercontent.com/60840921/154053876-39812b46-ae35-472d-86d7-909ec0508d4e.png)
 
  编写基本的数据库连接操作，这里使用JDBCUtils，创建基本的配置文件，在JDBCUtils中编写代码：
