@@ -29,57 +29,44 @@
 
 **1、首页**
 
-![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg)
+![image](https://user-images.githubusercontent.com/60840921/154052790-c51f95ec-0629-4dea-ba42-1e4a147aa24d.png)
 
 **2、登录页面** 
+![image](https://user-images.githubusercontent.com/60840921/154052849-c4205af2-436d-4f86-a242-b64acf3e5997.png)
 
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image050.jpg) |
 
 **3、注册页面** 
+![image](https://user-images.githubusercontent.com/60840921/154052894-eb085e08-94a3-42b9-b707-8aa64c622ba7.png)
 
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg) |
 
 **4、用户购物车页面**
+![image](https://user-images.githubusercontent.com/60840921/154052926-447254de-4a1d-4052-8ad4-cc35e2b59a8f.png)
 
-![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image054.jpg)
 **5、 我的订单页面**
+![image](https://user-images.githubusercontent.com/60840921/154052947-eb82ca76-4fb0-4d26-97b8-fcf75b0d8a1e.png)
 
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image056.jpg) |
-
-
-****
 
 **6、图书管理页面**
+![image](https://user-images.githubusercontent.com/60840921/154052991-29ceb319-1dd5-4f8d-ad53-dbc4c824449a.png)
 
-![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg)
 
 **7、订单管理页面**
+![image](https://user-images.githubusercontent.com/60840921/154053011-4a6d6e69-8a9a-4393-a837-6f07b5885e8c.png)
 
- 
-
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg) |
 
 **8、榜单**
 
-![image-20220215131834656](C:\Users\jhu\AppData\Roaming\Typora\typora-user-images\image-20220215131834656.png)
+![image](https://user-images.githubusercontent.com/60840921/154053203-4912d0e0-3cb6-4547-8e34-5eaed27cd254.png)
 
 **9、总账单页面**
 
-<img src="C:\Users\jhu\AppData\Roaming\Typora\typora-user-images\image-20220215131957485.png" alt="image-20220215131957485" style="zoom:100%;" />
+![image](https://user-images.githubusercontent.com/60840921/154053247-e4ce4084-6cf6-4b2d-a589-15dd76e89eee.png)
 
 
 
 **10、个人信息页面**
 
-![image-20220215132131909](C:\Users\jhu\AppData\Roaming\Typora\typora-user-images\image-20220215132131909.png)
+![image](https://user-images.githubusercontent.com/60840921/154053278-0406861d-c2de-4b6c-8fc9-283b74bdac0d.png)
 
 ---
 
@@ -88,35 +75,19 @@
 ### （三）数据库存储设计
 
  根据前端页面以及之前大实验的分析，我们决定创建book数据库，建库语句如下：
-
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![文本框: drop database if exists book;  #如果原来的数据库存在，就删除 create database book;         #创建数据库 use book;               # 切换到数据库  ](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image061.gif) |
-
+![image](https://user-images.githubusercontent.com/60840921/154053614-e54b2fa4-ed49-4c22-9370-f55cfeb8ba42.png)
 
 并决定创建4张表如下： 
 
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image063.jpg) |
+![image](https://user-images.githubusercontent.com/60840921/154053653-afb6e182-18a9-472a-8895-73a6a0477e73.png)
 
 <center>图为navicat for mysql提供</center>
 
 建表语句如下：
-
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![文本框: 用户表： create table t_user(    `id` int primary key auto_increment,    `username` varchar(50) not null unique,    `password` varchar(32) not null,    `email` varchar(50)  );  ](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image064.gif) |
-
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![文本框: 图书表： create table t_book(     `id` int primary key auto_increment,     `name` varchar(100),     `price` decimal(11,2),     `author` varchar(100),     `sales` int,     `stock` int,     `img_path` varchar(200) );  ](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image065.gif) |
-
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![文本框: 订单表： create table t_order(    `order_id` varchar(50) primary key,    ##订单号    `create_time` datetime not null,   ##订单时间    `total_money` decimal(11,2) not null,  ##总金额     `status` int not null default 0,   ##物流状态：0-未发货、1-等待用户签收、2-用户已签收    `user_id` int not null,          ##用户编号    foreign key (`user_id`) references t_user(`id`) );  ](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image066.gif) |
-
-                ![文本框: 订单项： create table t_order_item(    `id` int primary key auto_increment,    `name` varchar(30) not null,      ##商品名    `price` decimal(11,2),       ##商品单价    `total_money` decimal(11,2),      ##商品总金额    `count` int not null,        ##商品数量    `order_id` varchar(50) not null,   ##订单号    foreign key (`order_id`) references t_order(`order_id`) );  ](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image067.gif)
+![image](https://user-images.githubusercontent.com/60840921/154053765-6a87677c-352f-46a0-b85b-c1c05a315c83.png)
+![image](https://user-images.githubusercontent.com/60840921/154053780-b7368f19-db58-48ee-8dbc-b8f4ca42f51c.png)
+![image](https://user-images.githubusercontent.com/60840921/154053802-f122893d-4e5b-4a22-981f-39e194769de9.png)
+![image](https://user-images.githubusercontent.com/60840921/154053828-10a32479-8e30-4fb4-a93e-8d5c5e7eefd1.png)
 
 说明：
 
@@ -133,12 +104,7 @@
 **用户模块：**
 
 根据数据库表的设计创建我们的javaBean，创建User类，数据与数据库t_user表相对应。之后要设计我们的数据库层面的连接，这里导入数据库连接的jar包，已经测试包：
-
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image069.jpg) |
-
-
+![image](https://user-images.githubusercontent.com/60840921/154053876-39812b46-ae35-472d-86d7-909ec0508d4e.png)
 
  编写基本的数据库连接操作，这里使用JDBCUtils，创建基本的配置文件，在JDBCUtils中编写代码：
 
@@ -180,7 +146,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
  &emsp;关于用户登录的模块也就是：
 
-![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image071.jpg)
+![image](https://user-images.githubusercontent.com/60840921/154053914-ca103a3e-dc6d-4fd0-a74d-4349b8688c4a.png)
 
 其中在Dao层要进行一次test，在service层也要进行测试，如果出现错误，那么分层开发的优势就可以显示出来，我们可以很快的找出是哪一层出现了错误。在servlet层中我们用到了HTTP的相关知识，使用了doPost或者doGet方法，因此我们将servlet层中复用的代码放到baseServlet中，并利用反射技术去调用我们响应的方法（即通过类找到方法）。
 
@@ -202,12 +168,43 @@ public Book queryBookById(Integer id) {
 ```
 
 就是一个简单的sql语句，然后利用我们的数据库编程类库，之间得到我们查询之后的图书对象。之后的service层也是通过dao层来实现方法，而我们的servlet层也是如此，这个时候我们要去管理员的图书管理页面去设置我们数据显示。这里就用到了JSP技术，也就是为什么之前要将HTML换位JSP页面的原因，可以动态的显示书籍信息，例如：
-
-<div id="main">    <table style="height: 350px">       <tr>          <td>名称</td>          <td>价格</td>          <td>作者</td>          <td>销量</td>          <td>库存</td>          <td colspan="2">操作</td>       </tr>       <c:forEach items="${requestScope.page.items}" var="book">          <tr>             <td>${book.name}</td>             <td>${book.price}</td>             <td>${book.author}</td>             <td>${book.sales}</td>             <td>${book.stock}</td>             <td><a href="manager/bookServlet?&action=getBook&id=${book.id}&pageNo=${requestScope.page.pageNo}">修改</a></td>             <td><a class="deleteClass" href="manager/bookServlet?action=delete&id=${book.id}&pageNo=${requestScope.page.pageNo}">删除</a></td>          </tr>       </c:forEach>
-
+```html
+<c:forEach items="${requestScope.page.items}" var="book">
+            <div class="b_list">
+                <div class="img_div">
+                    <img class="book_img" alt="" src="${book.imgPath}" />
+                </div>
+                <div class="book_info">
+                    <div class="book_name">
+                        <span class="sp1">书名:</span>
+                        <span class="sp2">${book.name}</span>
+                    </div>
+                    <div class="book_author">
+                        <span class="sp1">作者:</span>
+                        <span class="sp2">${book.author}</span>
+                    </div>
+                    <div class="book_price">
+                        <span class="sp1">价格:</span>
+                        <span class="sp2">￥${book.price}</span>
+                    </div>
+                    <div class="book_sales">
+                        <span class="sp1">销量:</span>
+                        <span class="sp2">${book.sales}</span>
+                    </div>
+                    <div class="book_amount">
+                        <span class="sp1">库存:</span>
+                        <span class="sp2">${book.stock}</span>
+                    </div>
+                    <div class="book_add">
+                        <button bookId=${book.id} class="addToCart">加入购物车</button>
+                    </div>
+                </div>
+            </div>
+</c:forEach>
+```
  而整个的逻辑也是很好理解的：
 
-![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image073.jpg)
+![image](https://user-images.githubusercontent.com/60840921/154054726-f1f507b6-d935-47f8-b236-0afd53a8793c.png)
 
  以上我们就可以试下图书的增加、删除和修改操作，在删除操作中我们需要在web页面上添加提示，避免用户不小心删除了数据。
 
@@ -221,7 +218,7 @@ public Book queryBookById(Integer id) {
 
  &emsp;为了保存用户购买书籍的信息和订单信息，我们依旧和之前一样，这里我们可以从servlet开始，反向操作。我们在servlet中的操作逆行逻辑如下：
 
-![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image075.jpg)
+![image](https://user-images.githubusercontent.com/60840921/154054749-e17702aa-6ef3-4cf1-aba1-8b6d744bce10.png)
 
 **事务处理**
 
@@ -233,7 +230,7 @@ public Book queryBookById(Integer id) {
 
 逻辑也就是
 
-![img](file:///C:/Users/jhu/AppData/Local/Temp/msohtmlclip1/01/clip_image077.jpg)
+![image](https://user-images.githubusercontent.com/60840921/154054762-8f47322a-2353-478f-ac8b-7b71f394e5b4.png)
 
  *那么我们的网上书店就完成了！*
 
@@ -248,5 +245,3 @@ public Book queryBookById(Integer id) {
 &emsp;邮箱：yang2251335663@qq.com
 
 &emsp;CSDN：[threecat.up](https://blog.csdn.net/qq_43919400?spm=1000.2115.3001.5343)
-
-##  
