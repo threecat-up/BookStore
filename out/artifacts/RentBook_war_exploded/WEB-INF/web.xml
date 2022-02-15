@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.yj.web.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/userServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>com.yj.web.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/manager/bookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClientBookServlet</servlet-name>
+        <servlet-class>com.yj.web.ClientBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientBookServlet</servlet-name>
+        <url-pattern>/client/bookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <url-pattern>/kaptcha.jpg</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.yj.web.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cartServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClientOrderServlet</servlet-name>
+        <servlet-class>com.yj.web.ClientOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientOrderServlet</servlet-name>
+        <url-pattern>/client/orderServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManagerOrderServlet</servlet-name>
+        <servlet-class>com.yj.web.ManagerOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerOrderServlet</servlet-name>
+        <url-pattern>/manager/orderServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>PayServlet</servlet-name>
+        <servlet-class>com.yj.web.PayServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PayServlet</servlet-name>
+        <url-pattern>/payServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManagerUserServlet</servlet-name>
+        <servlet-class>com.yj.web.ManagerUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerUserServlet</servlet-name>
+        <url-pattern>/manager/UserServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+    <filter>
+        <filter-name>ManagerFilter</filter-name>
+        <filter-class>com.yj.filter.ManagerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ManagerFilter</filter-name>
+        <url-pattern>/pages/manager/*</url-pattern>
+        <url-pattern>/manager/bookServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>TransactionFilter</filter-name>
+        <filter-class>com.yj.filter.TransactionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TransactionFilter</filter-name>
+        <!-- /*表示当前工程下所有请求 -->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <error-page>
+        <!-- error-code是错误类型-->
+        <error-code>404</error-code>
+        <!-- location标签表示要跳转去的页面路径-->
+        <location>/pages/error/error404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <!-- error-code是错误类型-->
+        <error-code>500</error-code>
+        <!-- location标签表示要跳转去的页面路径-->
+        <location>/pages/error/error500.jsp</location>
+    </error-page>
+
+
+</web-app>
