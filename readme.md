@@ -19,7 +19,9 @@
 **DBMS**：MySQL（图形化界面MySQLworkbench/SQLyog/navicat）
 
 **建模工具**：Sybase PowerDesigner
+**注意Tomcat的配置**
 ![image](https://user-images.githubusercontent.com/60840921/153998463-e400b161-75a0-4b30-9abc-a496251b7144.png)
+![SIUSS(SFDAF6$D(V N7ZY1S](https://user-images.githubusercontent.com/60840921/154036794-41637771-afc1-42fa-90d2-e4962123590d.png)
 
 ---
 
