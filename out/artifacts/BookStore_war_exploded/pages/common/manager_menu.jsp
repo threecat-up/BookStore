@@ -11,6 +11,5 @@
     <a href="manager/orderServlet?action=orders">订单管理</a>
     <a href="manager/UserServlet?action=page">用户管理</a>
     <a href="manager/orderServlet?action=showTotal">总账单</a>
-    <a href="index.jsp">返回书店
-    </a>
+    <a href="index.jsp">返回书店</a>
 </div>

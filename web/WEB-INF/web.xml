@@ -112,12 +112,12 @@
         <location>/pages/error/error404.jsp</location>
     </error-page>
 
-    <error-page>
-        <!-- error-code是错误类型-->
+    <!--<error-page>
+        &lt;!&ndash; error-code是错误类型&ndash;&gt;
         <error-code>500</error-code>
-        <!-- location标签表示要跳转去的页面路径-->
+        &lt;!&ndash; location标签表示要跳转去的页面路径&ndash;&gt;
         <location>/pages/error/error500.jsp</location>
-    </error-page>
+    </error-page>-->
 
 
 </web-app>
