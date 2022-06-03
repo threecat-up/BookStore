@@ -31,7 +31,6 @@
     </script>
 </head>
 <body>
-${sessionScope.lastName}
 <div id="header">
     <img class="logo_img" alt="" src="static/img/logo1.jpg" >
     <span class="wel_word">Bookstore</span>
