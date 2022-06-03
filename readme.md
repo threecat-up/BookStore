@@ -1,7 +1,7 @@
 # 网上书店系统
 ## 项目简述:
 &emsp;在B站尚硅谷Javaweb视频中学习了网上书店系统，但是所给的项目并没有完全实现，自己实现了整个完整的项目，并且添加了不少的功能（项目语言为Java，框架为**MVC**，服务器Tomcat，数据库MySQL）。<br>
-&emsp;快速搭建：clone之后，在IDEA中打开，配置Tomcat服务器（Tomcat7/8/9及最新的均可），找到sql文件夹并在MySQL（MySQL的版本最好是5.x避免出现问题）中导入文件bookstore.sql，此时会创建名为book的数据库数据，找到jdbc.properties文件，将其中的username和password更改为自己的数据库的用户名和密码。之后在MySQL数据库管理系统可以查看关于账户密码问题（管理员账号和密码均为yangjie，其它为普通用户），之后运行即可。
+&emsp;快速搭建：clone之后，在IDEA中打开，配置Tomcat服务器（Tomcat7/8/9及最新的均可），找到sql文件夹并在MySQL（MySQL的版本最好是5.x避免出现问题）中导入文件bookstore.sql，此时会创建名为book的数据库数据，找到jdbc.properties文件，将其中的username和password更改为自己的数据库的用户名和密码。之后在MySQL数据库管理系统可以查看关于账户密码问题（管理员账号和密码均为admin，其它为普通用户），之后运行即可。
 
 ## 项目的设计报告如下（文件夹report中提供了word版的详细设计报告可以参考）
 ## 【详细设计】
@@ -24,7 +24,7 @@
 
 ![image](https://user-images.githubusercontent.com/60840921/153998463-e400b161-75a0-4b30-9abc-a496251b7144.png)
 ![SIUSS(SFDAF6$D(V N7ZY1S](https://user-images.githubusercontent.com/60840921/154036794-41637771-afc1-42fa-90d2-e4962123590d.png)
-
+**特别注意Tomcat项目路径是/Book，所以项目首页默认打开是`http://localhost:8080/Book/`，如果发现购物车点击没有反应，一般都是因为在IDEA中Tomcat配置不是/Book，如上图**
 ---
 
 ### （二）用户界面设计
