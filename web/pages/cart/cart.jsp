@@ -20,7 +20,7 @@
 				var count = this.value;
 				var id = $(this).attr("bookId");
 				if(confirm("你确定要修改【"+name+"】数量为"+count+"么？")) {
-					location.href="http://localhost:8080/bookstore1/cartServlet?action=updateCount&count="+count+"&id="+id;
+					location.href="http://localhost:8080/Book/cartServlet?action=updateCount&count="+count+"&id="+id;
 				} else {
 					this.value = this.defaultValue;
 				}
