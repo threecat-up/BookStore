@@ -35,7 +35,7 @@
             <td>作者</td>
             <td style="color: red">销量</td>
         </tr>
-        <%!int i=1;%>
+        <%int i=1;%>
         <c:forEach items="${requestScope.page.items}" var="book">
             <tr>
                 <td><%=i++%></td>
