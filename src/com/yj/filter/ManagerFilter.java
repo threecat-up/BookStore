@@ -24,7 +24,7 @@ public class ManagerFilter implements Filter {
         User user = (User) httpServletRequest.getSession().getAttribute("user");
         if(user==null) {
             httpServletRequest.getRequestDispatcher("/pages/user/login.jsp").forward(servletRequest,servletResponse);
-        } else if(!"yangjie".equals(user.getUsername())){
+        } else if(!"admin".equals(user.getUsername())){
             httpServletRequest.getRequestDispatcher("/pages/error/errorManager.jsp").forward(servletRequest,servletResponse);
         }else{
             filterChain.doFilter(servletRequest,servletResponse);
