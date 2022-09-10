@@ -252,7 +252,7 @@ public Book queryBookById(Integer id) {
 
 &emsp;如果有什么问题欢迎联系我~
 
-&emsp;邮箱：yang2251335663@qq.com
+&emsp;邮箱：yangjie.dev@outlook.com
 
 &emsp;CSDN：[threecat.up](https://blog.csdn.net/qq_43919400?spm=1000.2115.3001.5343)
 
